@@ -4,7 +4,7 @@
 
 ## About Laravel Forum
 
-Building a Forum Application using Laravel 7 and Test-Driven Design methodologies.
+Building a Forum Application using Laravel 7 and Test-Driven Development methodologies.
 
 ## License
 
