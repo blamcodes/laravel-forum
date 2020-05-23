@@ -2,6 +2,7 @@
 
 <p align="center">
 [![HitCount](http://hits.dwyl.com/blampewpew/laravel-forum.svg)](http://hits.dwyl.com/blampewpew/laravel-forum)
+[![HitCount](http://hits.dwyl.com/dwyl/start-here.svg)](http://hits.dwyl.com/dwyl/start-here)
 </p>
 
 ## About Laravel
