@@ -18,11 +18,11 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(Thread::class, function (Faker $faker) {
+$factory->define(Channel::class, function (Faker $faker) {
+    $name = $faker->word;
+
     return [
-        'user_id' => factory(User::class),
-        'channel_id' => factory(Channel::class),
-        'title' => $faker->sentence,
-        'body' => $faker->paragraph,
+        'name' => $name,
+        'slug' => $name,
     ];
 });
