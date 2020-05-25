@@ -4,6 +4,7 @@ namespace Tests\Feature;
 
 use App\Reply;
 use App\Thread;
+use App\Channel;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
@@ -53,7 +54,7 @@ class ReadThreadsTest extends TestCase
     {
         $channel = create(Channel::class);
 
-        $threadInChannel = $this->get('/threads' . $channel->slug);
+        $threadInChannel = create(Thread::class, ['channel_id' => $channel->id]);
 
         $threadNotInChannel = create(Thread::class);
 
