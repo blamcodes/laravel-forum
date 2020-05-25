@@ -19,14 +19,13 @@ class ThreadsController extends Controller
     /**
      * Display a listing of the resource.
      *
+     * @param Channel $channel
      * @return \Illuminate\Http\Response
      */
-    public function index($channel_slug = null)
+    public function index(Channel $channel)
     {
-        if ($channel_slug) {
-            $channel_id = Channel::where('slug', $channel_slug)->first()->id;
-
-            $threads = Thread::where('channel_id', $channel_id)->latest()->get();
+        if ($channel->exists) {
+            $threads = $channel->threads()->latest()->get();
         } else {
             $threads = Thread::latest()->get();
         }
