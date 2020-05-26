@@ -12,6 +12,7 @@ Building a Forum Application using Laravel 7 and Test-Driven Development methodo
 till the desired result has been achieved.
 * Working with migrations and `php artisan` commands.
 * Adding the `laravel/ui` composer package to introduce authentication and auth middleware.
+* Using Continuous Integration via Github Actions to perform tests upon PR and on merge to master.
 
 ## License
 
