@@ -12,6 +12,8 @@ class ThreadFilters
      */
     protected $request;
 
+    protected $builder;
+
     /**
      * ThreadFilters constructor.
      */
@@ -22,10 +24,19 @@ class ThreadFilters
 
     public function apply($builder)
     {
-        if (! $username = $this->request->by) return $builder;
+        $this->builder = $builder;
 
+        if ($this->request->has('by')) {
+            $this->by($this->request->by);
+        }
+
+        return $this->builder;
+    }
+
+    protected function by($username)
+    {
         $user = User::where('name', $username)->firstOrFail();
 
-        return $builder->where('user_id', $user->id);
+        return $this->builder->where('user_id', $user->id);
     }
 }
